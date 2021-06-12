@@ -1,0 +1,123 @@
+server:
+  port: 8080
+  servlet:
+    session:
+      timeout: 1s
+spring:
+  application:
+    name: MultiTenant
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/postgres?ApplicationName=MultiTenant'
+    username: 'postgres'
+    password: 'postgres'
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: none
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    
+  security:
+    oauth2:
+      client:
+        provider:
+#          google:
+#            issuer-uri: https://accounts.google.com
+#            token-uri: https://oauth2.googleapis.com/token                 
+#            authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
+#            user-info-uri: https://openidconnect.googleapis.com/v1/userinfo
+#            jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs
+          keycloak:
+            issuer-uri: http://localhost:8081/auth/realms/test1
+#          oidc:
+#            issuer-uri: http://localhost:9080/auth/realms/jhipster
+        registration:
+          google:
+            client-id: 674095329621-r8o8fhl3v2mo7f7jvjtmde7vk89vb45i.apps.googleusercontent.com
+            client-secret: QZawPdK4ZAaN0RUesjEjiCdt
+#          oidc:
+#            client-id: web_app
+#            client-secret: web_app
+#            scope: openid,profile,email
+          keycloak:
+            client-id: web
+            client-secret: web
+            scope: openid,profile,email
+
+
+
+
+
+
+
+#keycloak.client-id=jakarta-school
+#keycloak.client-secret=197bc3b4-64b0-452f-9bdb-fcaea0988e90
+#keycloak.scope=openid, profile
+#keycloak.authorization-grant-type=password
+#
+#keycloak.authorization-uri=http://localhost:8080/auth/realms/education/protocol/openid-connect/auth
+#keycloak.user-info-uri=http://localhost:8080/auth/realms/education/protocol/openid-connect/userinfo
+#keycloak.token-uri=http://localhost:8080/auth/realms/education/protocol/openid-connect/token
+#keycloak.logout=http://localhost:8080/auth/realms/education/protocol/openid-connect/logout
+#keycloak.jwk-set-uri=http://localhost:8080/auth/realms/education/protocol/openid-connect/certs
+#keycloak.certs-id=vdaec4Br3ZnRFtZN-pimK9v1eGd3gL2MHu8rQ6M5SiE
+
+
+
+#spring.security.oauth2.client.provider.google.token-uri=https://oauth2.googleapis.com/token
+#spring.security.oauth2.client.provider.google.authorization-uri=https://accounts.google.com/o/oauth2/v2/auth
+#spring.security.oauth2.client.provider.google.user-info-uri=https://openidconnect.googleapis.com/v1/userinfo
+#spring.security.oauth2.client.provider.google.jwk-set-uri=https://www.googleapis.com/oauth2/v3/certs
+#spring.security.oauth2.client.provider.google.issuer-uri=https://accounts.google.com
+
+
+
+
+
+
+
+    
+logging:
+  level:
+    root: info
+    com.example: debug
+    com.cathayholdings.smarthealth: debug
+    com.czetsuyatech: debug
+    
+    org:
+      keycloak: DEBUG
+      springframework:
+        security: 
+          web:
+            FilterChainProxy: DEBUG
+
+
+
+
+#logging.level.org.springframework.security.web.FilterChainProxy=DEBUG
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
