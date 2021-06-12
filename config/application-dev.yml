@@ -34,8 +34,8 @@ spring:
 #            issuer-uri: http://localhost:9080/auth/realms/jhipster
         registration:
           google:
-            client-id: 674095329621-r8o8fhl3v2mo7f7jvjtmde7vk89vb45i.apps.googleusercontent.com
-            client-secret: QZawPdK4ZAaN0RUesjEjiCdt
+            client-id: ${client-id:'674095329621-r8o8fhl3v2mo7f7jvjtmde7vk89vb45i.apps.googleusercontent.com'}
+            client-secret: ${client-secret:'QZawPdK4ZAaN0RUesjEjiCdt'}
 #          oidc:
 #            client-id: web_app
 #            client-secret: web_app
